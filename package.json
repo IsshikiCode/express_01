@@ -1,0 +1,25 @@
+{
+  "name": "mongo_db-with-express",
+  "version": "1.0.0",
+  "description": "MVC with MongoDb and Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon run index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsshikiCode/express_01.git"
+  },
+  "author": "Nithin Sai Krishna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsshikiCode/express_01/issues"
+  },
+  "homepage": "https://github.com/IsshikiCode/express_01#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "memory-cache": "^0.2.0",
+    "mongoose": "^8.5.2",
+    "nodemon": "^3.1.4"
+  }
+}
