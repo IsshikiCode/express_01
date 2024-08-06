@@ -4,7 +4,7 @@
   "description": "MVC with MongoDb and Express",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon run index.js"
+    "test": "nodemon index.js"
   },
   "repository": {
     "type": "git",

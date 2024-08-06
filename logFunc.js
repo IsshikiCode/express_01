@@ -1,10 +1,15 @@
 const fs = require('fs');
+const path = require('path');
 
 
 function createLogs(data){
-    const errorLogs = fs.createWriteStream(`${__dirname}/error.log`,{flags:'a'})
-    errorLogs.write(`${data} -- Logged at ${new Date().toISOString()} \n`);
-    errorLogs.end();
+    const errorLogs = path.join(__dirname,'error.log');
+    const logData = `${data} -- Logged at ${new Date().toISOString()} \n`;
+    fs.appendFile(errorLogs, logData, (err)=>{
+        if(err){
+            console.error("Logging Failed")
+        }
+    })
 }
 
 

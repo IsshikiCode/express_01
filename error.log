@@ -7,3 +7,9 @@
 [error]: Debug the error 
  MongoServerError: E11000 duplicate key error collection: test.blogs index: slug_1 dup key: { slug: "my-new-blog-post" } -- Logged at 2024-08-06T00:13:25.366Z 
 [error]: Debug the error -> MongoServerError: E11000 duplicate key error collection: test.blogs index: slug_1 dup key: { slug: "my-new-blog-post" } -- Logged at 2024-08-06T00:13:40.666Z 
+[error]: Debug the error -> MongoServerError: E11000 duplicate key error collection: test.blogs index: slug_1 dup key: { slug: "my-new-blog-post" } -- Logged at 2024-08-06T00:27:00.823Z 
+[error]: Error Logged at Comments -- Logged at 2024-08-06T09:46:31.804Z 
+[error]: Error Logged at Comments -- Logged at 2024-08-06T09:47:23.704Z 
+[error]: Error Logged at Comments -- Logged at 2024-08-06T09:47:24.647Z 
+[error]: Error Logged at Comments -- Logged at 2024-08-06T09:47:24.836Z 
+[error]: Error Logged at Comments -- Logged at 2024-08-06T09:47:25.019Z 
