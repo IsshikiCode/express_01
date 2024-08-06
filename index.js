@@ -1,11 +1,15 @@
 const fs = require('fs');
 const express = require('express');
 const mem = require('memory-cache');
-const limiter = require('./rateLimit'); // Import the limiter
 const mongoose = require('mongoose');
 
+// Module Imports
+const limiter = require('./rateLimit'); // Import the limiter
+const loggerObj = require('./logFunc');
+
 //Model imports
-const Blog = require('./models/blogs.model')
+const Blog = require('./models/blogs.model');
+const { error } = require('console');
 
 // Configuration
 const app = express();
@@ -24,7 +28,7 @@ async function main() {
 
 };
 
-main().catch(err=>console.log(err));
+main().catch(err=>loggerObj.error(err));
 
 
 // CRUD
@@ -42,6 +46,7 @@ app.post('/blogs',async(req,res)=>{
     try{
         const { title, slug, author, comments, content, isActive } = req.body;
         if (!title || !slug || !author || !content) {
+            loggerObj.warning("Fields Missing at POST /blogs")
             return res.status(400).json({ message: 'Missing required fields' });
         }
         const blog_create = new Blog( { 
@@ -57,6 +62,7 @@ app.post('/blogs',async(req,res)=>{
          
          return res.status(201).json(blog_create);
     }catch(err){
+        loggerObj.error(`Debug the error -> ${err}`)
         res.status(500).json(`Error Adding Blog Post-\n ${err}`);
     }
     
